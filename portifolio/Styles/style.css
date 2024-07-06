@@ -1,0 +1,56 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(0, 212, 255);
+  background: radial-gradient(circle, rgb(0, 212, 255) 0%, rgb(24, 35, 54) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.containerMain {
+  background-color: #182336;
+  width: 80vw;
+  height: 90vh;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  border: 1px solid red;
+}
+
+.contentFirst {
+  border: 1px solid yellow;
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 20px 0 10px;
+  height: 80%;
+  padding: 80px;
+}
+
+.contentFirst_Header {
+  border: 1px solid green;
+  color: #00d4ff;
+}
+
+.contentFirst_Header h3 {
+  color: #fff;
+}
+
+.contentFist_Info {
+  margin-top: 15px;
+}
+
+.info {
+  color: #fff;
+}
+
+.info h2 {
+  color: #00d4ff;
+}/*# sourceMappingURL=style.css.map */
