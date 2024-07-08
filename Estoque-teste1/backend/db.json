@@ -1,0 +1,42 @@
+{
+    "Setor": [
+        {
+            "id": "1",
+            "nome": "Sala de Contabilidade "
+        }
+    ],
+    "corredor": [
+        {
+            "id": "1",
+            "setorId": "1",
+            "nome": "Informatica"
+        }
+    ],
+    "Estante": [
+        {
+            "id": "1",
+            "corredorId": "1",
+            "nome": "Informatica"
+        }
+    ],
+    "Prateleira": [
+        {
+            "id": "1",
+            "estanteId": "1",
+            "nome": "Fornecedores"
+        }
+    ],
+    "Caixa": [
+        {
+            "id": "1",
+            "prateleiraId": "1",
+            "TipoDocumentoSetor": "Notas Fiscais de Fornecedores",
+            "NumeroDocumento": "1234567890123456789",
+            "DataDocumento": "01/01/2020",
+            "AnoBase-Exer": "31/12/2020",
+            "DataDestruicao": "31/01/2020",
+            "Descricao": "Desenvolvimento de Sistema de Automacao Industrial e sistema integrado de manufatura e financeira",
+            "Observacai": "Relacao de Notas Fiscais de Fornecedores:IBYTE,  Nagem, Cecomil "
+        }
+    ]
+}

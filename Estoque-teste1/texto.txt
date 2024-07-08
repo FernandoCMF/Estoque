@@ -1,0 +1,1 @@
+setor/corredor/prateleira/estante/caixa = e os documentos que tem na caixa
