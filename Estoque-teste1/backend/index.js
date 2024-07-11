@@ -5,7 +5,7 @@ const port = 3000
 server.use(express.json())
 
 
-const cursos = ['JavaScript','css', 'html']
+const cursos = ['JavaScript', 'css', 'html']
 
 server.get('/cursos/:index', (req, res) => {
     const {index} = req.params;

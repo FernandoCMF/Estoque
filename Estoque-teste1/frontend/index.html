@@ -1,17 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estoque teste</title>
 </head>
-<body>
-    <form>
-        <input id="inputPost" placeholder="Digite algo" type="text">
-        <button>POST</button>
-    </form>
 
-    <ul id="listaDeCaixas">Estoque de caixa</ul>
+<body>
+    <h1>Estoque</h1>
+    <section class="inputData">
+        <form method="post">
+            <fieldset>
+                <legend>Inserir novo item</legend>
+                <input id="inputRoom" type="text" placeholder="Informe a sala">
+                <input id="inputHall" type="text" placeholder="Informe o corredor">
+                <input id="inputBookcase" type="text" placeholder="Informe a estante">
+                <input id="inputShelf" type="text" placeholder="Informe a prateleira">
+                <!-- Numero da caixa e dinamico de acordo com o espaco -->
+            </fieldset>
+            <fieldset>
+                <legend>Caixa</legend>
+                <input id="boxType" type="text" placeholder="Tipo do documento/setor">
+                <input id="boxNumberDocument" type="text" placeholder="Informe o numero do documento">
+                <input id="boxDate" type="text" placeholder="Data do documento">
+                <input id="boxYearBase" type="text" placeholder="Ano base - Exer">
+                <label id="boxObservation" for="story">Observação</label>
+                <textarea id="boxStory" name="story" rows="5" cols="33"></textarea>
+            </fieldset>
+
+            <button type="submit">Inserir</button>
+        </form>
+    </section>
     <script src="./index.js"></script>
 </body>
+
 </html>

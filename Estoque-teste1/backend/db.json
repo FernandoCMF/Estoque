@@ -1,42 +1,53 @@
 {
-    "Setor": [
-        {
-            "id": "1",
-            "nome": "Sala de Contabilidade "
-        }
-    ],
-    "corredor": [
-        {
-            "id": "1",
-            "setorId": "1",
-            "nome": "Informatica"
-        }
-    ],
-    "Estante": [
-        {
-            "id": "1",
-            "corredorId": "1",
-            "nome": "Informatica"
-        }
-    ],
-    "Prateleira": [
-        {
-            "id": "1",
-            "estanteId": "1",
-            "nome": "Fornecedores"
-        }
-    ],
-    "Caixa": [
-        {
-            "id": "1",
-            "prateleiraId": "1",
-            "TipoDocumentoSetor": "Notas Fiscais de Fornecedores",
-            "NumeroDocumento": "1234567890123456789",
-            "DataDocumento": "01/01/2020",
-            "AnoBase-Exer": "31/12/2020",
-            "DataDestruicao": "31/01/2020",
-            "Descricao": "Desenvolvimento de Sistema de Automacao Industrial e sistema integrado de manufatura e financeira",
-            "Observacai": "Relacao de Notas Fiscais de Fornecedores:IBYTE,  Nagem, Cecomil "
-        }
-    ]
+  "Local": [
+    {
+      "id_local": "1",
+      "setor": "Informatica",
+      "corredor": "Informatica",
+      "estante": "Informatica",
+      "prateleira": "Fornecedores"
+    },
+    {
+      "id": "0537",
+      "id_local": "2",
+      "setor": "Contabilidade",
+      "corredor": "Contabilidade",
+      "estante": "Contabilidade",
+      "prateleira": "Fornecedores"
+    }
+  ],
+  "Documento": [
+    {
+      "id_documento": "1",
+      "tipo_documento": "Contabilidade",
+      "nome_documento": "Informatica",
+      "data_criacao": "01/01/2024",
+      "resumo": "Resumo teste resumo tetse"
+    },
+    {
+      "id": "8cf4",
+      "id_documento": "2",
+      "tipo_documento": "Contabilidade",
+      "nome_documento": "Contabilidade",
+      "data_criacao": "01/01/2024",
+      "resumo": "Resumo teste resumo contabilidade"
+    }
+  ],
+  "Caixa": [
+    {
+      "id_caixa": "1",
+      "setor": "Informatica",
+      "numero_documento": "123456789",
+      "descricao_caixa": "descricao caixa teste 2",
+      "id_documento": "1"
+    },
+    {
+      "id": "131e",
+      "id_caixa": "2",
+      "setor": "Contabilidade",
+      "numero_documento": "987654321",
+      "descricao_caixa": "descricao caixa teste 2 contabilidade",
+      "id_documento": "2"
+    }
+  ]
 }
