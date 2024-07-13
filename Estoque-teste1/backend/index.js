@@ -1,50 +1,67 @@
-const express = require('express')
-const server = express()
-const port = 3000
+const express = require('express');
+const bodyParser = require('body-parser');
+const fs = require('fs');
+const path = require('path');
 
-server.use(express.json())
+const app = express();
+app.use(bodyParser.json());
 
+const dbPath = path.join(__dirname, 'db.json');
 
-const cursos = ['JavaScript', 'css', 'html']
+const readDb = () => {
+  const data = fs.readFileSync(dbPath);
+  return JSON.parse(data);
+};
 
-server.get('/cursos/:index', (req, res) => {
-    const {index} = req.params;
+const writeDb = (data) => {
+  fs.writeFileSync(dbPath, JSON.stringify(data, null, 2));
+};
 
-    return res.json(cursos[index])
-})
+app.get('/api/:collection', (req, res) => {
+  const db = readDb();
+  const collection = req.params.collection;
+  res.send(db[collection]);
+});
 
-server.get('/cursos', (req, res) => {
-    return res.json(cursos)
-})
+app.get('/api/:collection/:id', (req, res) => {
+  const db = readDb();
+  const collection = req.params.collection;
+  const id = req.params.id;
+  const item = db[collection].find((el) => el[`id_${collection.slice(0, -1)}`] === id);
+  res.send(item);
+});
 
-server.post('/cursos', (req, res) => {
-    const {name} = req.body //Sera?
-    cursos.push(name)
-    return res.json(cursos)
-})
+app.post('/api/:collection', (req, res) => {
+  const db = readDb();
+  const collection = req.params.collection;
+  const newItem = req.body;
+  db[collection].push(newItem);
+  writeDb(db);
+  res.send(newItem);
+});
 
-server.put('/cursos/:index',(req, res) => {
-    const {index} = req.params;
-    const {name} = req.body;
+app.put('/api/:collection/:id', (req, res) => {
+  const db = readDb();
+  const collection = req.params.collection;
+  const id = req.params.id;
+  const updatedItem = req.body;
+  const index = db[collection].findIndex((el) => el[`id_${collection.slice(0, -1)}`] === id);
+  db[collection][index] = updatedItem;
+  writeDb(db);
+  res.send(updatedItem);
+});
 
-    cursos[index] = name
+app.delete('/api/:collection/:id', (req, res) => {
+  const db = readDb();
+  const collection = req.params.collection;
+  const id = req.params.id;
+  const index = db[collection].findIndex((el) => el[`id_${collection.slice(0, -1)}`] === id);
+  const deletedItem = db[collection].splice(index, 1);
+  writeDb(db);
+  res.send(deletedItem);
+});
 
-    return res.json(cursos)
-})
-
-server.delete('/cursos/:index', (req, res) => {
-    const {index} = req.params
-    cursos.splice(index, 1)
-    return res.json({message: 'O curso foi deletado com sucesso'})
-})
-
-
-
-
-
-
-
-// rodar o server na porta selecionada
-server.listen(port, () => {
-    console.log(`Server listening on port ${port}`)
-})
+const PORT = 3001;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
