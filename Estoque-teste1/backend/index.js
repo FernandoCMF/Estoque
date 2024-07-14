@@ -4,10 +4,15 @@ const fs = require('fs');
 const path = require('path');
 
 const app = express();
-app.use(bodyParser.json());
+app.use(bodyParser.json()); //Configura o Express para usar o body-parser para interpretar JSON
 
+
+//Define o caminho absoluto para o arquivo db.json, que está localizado no mesmo diretório que o arquivo de código 
 const dbPath = path.join(__dirname, 'db.json');
 
+
+
+// readDb e writeDb: Funções auxiliares para ler e escrever o arquivo db.json
 const readDb = () => {
   const data = fs.readFileSync(dbPath);
   return JSON.parse(data);
@@ -16,6 +21,7 @@ const readDb = () => {
 const writeDb = (data) => {
   fs.writeFileSync(dbPath, JSON.stringify(data, null, 2));
 };
+
 
 app.get('/api/:collection', (req, res) => {
   const db = readDb();
