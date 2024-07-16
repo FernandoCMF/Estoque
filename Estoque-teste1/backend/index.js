@@ -11,7 +11,6 @@ app.use(bodyParser.json()); //Configura o Express para usar o body-parser para i
 const dbPath = path.join(__dirname, 'db.json');
 
 
-
 // readDb e writeDb: Funções auxiliares para ler e escrever o arquivo db.json
 const readDb = () => {
   const data = fs.readFileSync(dbPath);
@@ -25,7 +24,7 @@ const writeDb = (data) => {
 
 app.get('/api/:collection', (req, res) => {
   const db = readDb();
-  const collection = req.params.collection;
+  const collection = req.params.collection; // Obtém o nome da coleção a partir dos parâmetros da URL
   res.send(db[collection]);
 });
 

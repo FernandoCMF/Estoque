@@ -25,6 +25,14 @@
       "data_criacao": "01/01/2024",
       "resumo": "Resumo teste resumo tetse",
       "id": "315d"
+    },
+    {
+      "id": "53a0",
+      "id_documento": "2",
+      "tipo_documento": "Contabilidade",
+      "nome_documento": "Contabilidade",
+      "data_criacao": "02/02/2024",
+      "resumo": "Resumo teste 2"
     }
   ],
   "Caixa": [
@@ -35,6 +43,14 @@
       "descricao_caixa": "descricao caixa teste 2",
       "id_documento": "1",
       "id": "fd1b"
+    },
+    {
+      "id": "c17d",
+      "id_caixa": "2",
+      "setor": "Contabilidade",
+      "numero_documento": "987654321",
+      "descricao_caixa": "descricao caixa teste 2",
+      "id_documento": "2"
     }
   ]
 }
