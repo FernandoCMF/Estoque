@@ -1,10 +1,27 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 const fs = require('fs');
 const path = require('path');
 
 const app = express();
 app.use(bodyParser.json()); //Configura o Express para usar o body-parser para interpretar JSON
+
+// Conexao com o mongoDB
+const database = module.exports = () => {
+  const conectionParams = {
+    useNewUrlParams: true,
+    useUnifieldTopology: true,
+  }
+
+  try {
+    mongoose.connect('mongodb+srv://fmfernando61:Ci3e1oUFFpus7Kb0@cluster0teste2.m8jw6hz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0Teste2'), conectionParams;
+    console.log('Conected succesfully')
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 
 
 //Define o caminho absoluto para o arquivo db.json, que está localizado no mesmo diretório que o arquivo de código 
@@ -66,6 +83,8 @@ app.delete('/api/:collection/:id', (req, res) => {
   res.send(deletedItem);
 });
 
+
+database()
 const PORT = 3001;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
