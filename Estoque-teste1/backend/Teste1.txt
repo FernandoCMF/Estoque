@@ -1,72 +1,56 @@
 {
-  "Setor": [
+  "Local": [
     {
-      "id": "1",
-      "nome": "Sala de Contabilidade "
+      "id_local": "1",
+      "setor": "Informatica",
+      "corredor": "Informatica",
+      "estante": "Informatica",
+      "prateleira": "Fornecedores",
+      "id": "bbe1"
     },
     {
-      "id": "69c6",
-      "nome": "Sala Informatica"
+      "id": "e41d",
+      "id_local": "2",
+      "setor": "Contabilidade",
+      "corredor": "Contabilidade",
+      "estante": "Contabilidade",
+      "prateleira": "Fornecedores"
     }
   ],
-  "Corredor": [
+  "Documento": [
     {
-      "id": "1",
-      "setorId": "1",
-      "nome": "Informatica"
+      "id_documento": "1",
+      "tipo_documento": "Contabilidade",
+      "nome_documento": "Informatica",
+      "data_criacao": "01/01/2024",
+      "resumo": "Resumo teste resumo tetse",
+      "id": "315d"
     },
     {
-      "id": "ec53",
-      "setorId": "69c6",
-      "nome": "Informatica"
-    }
-  ],
-  "Estante": [
-    {
-      "id": "1",
-      "corredorId": "1",
-      "nome": "Informatica"
-    },
-    {
-      "id": "fc03",
-      "corredorId": "ec53",
-      "nome": "Informatica"
-    }
-  ],
-  "Prateleira": [
-    {
-      "id": "1",
-      "estanteId": "1",
-      "nome": "Fornecedores"
-    },
-    {
-      "id": "cc74",
-      "estanteId": "fc03",
-      "nome": "Fornecedores2"
+      "id": "53a0",
+      "id_documento": "2",
+      "tipo_documento": "Contabilidade",
+      "nome_documento": "Contabilidade",
+      "data_criacao": "02/02/2024",
+      "resumo": "Resumo teste 2"
     }
   ],
   "Caixa": [
     {
-      "id": "1",
-      "prateleiraId": "1",
-      "tipoDocumentoSetor": "Notas Fiscais de Fornecedores",
-      "numeroDocumento": "1234567890123456789",
-      "dataDocumento": "01/01/2020",
-      "anoBase-Exer": "31/12/2020",
-      "dataDestruicao": "31/01/2020",
-      "descricao": "Desenvolvimento de Sistema de Automacao Industrial e sistema integrado de manufatura e financeira",
-      "observacao": "Relacao de Notas Fiscais de Fornecedores:IBYTE,  Nagem, Cecomil "
+      "id_caixa": "1",
+      "setor": "Informatica",
+      "numero_documento": "123456789",
+      "descricao_caixa": "descricao caixa teste 2",
+      "id_documento": "1",
+      "id": "fd1b"
     },
     {
-      "id": "864e",
-      "prateleiraId": "cc74",
-      "tipoDocumentoSetor": "TESTE 2",
-      "numeroDocumento": "9876543210",
-      "dataDocumento": "02/02/2022",
-      "anoBase-Exer": "02/02/2022",
-      "dataDestruicao": "02/02/2022",
-      "descricao": "TESTE 2",
-      "observacao": "TESTE 2"
+      "id": "c17d",
+      "id_caixa": "2",
+      "setor": "Contabilidade",
+      "numero_documento": "987654321",
+      "descricao_caixa": "descricao caixa teste 2",
+      "id_documento": "2"
     }
   ]
 }
